@@ -1,0 +1,12 @@
+[
+    "Dry cleaning/laundry service",
+    "Shopping on site",
+    "Free WiFi",
+    "Dry cleaning/laundry service",
+    "Shopping on site",
+    "Free WiFi",
+    "Concierge service",
+    "Luggage storage",
+    "24-hour front desk",
+    "Daily housekeeping"
+]

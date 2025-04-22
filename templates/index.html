@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TXT文件上传</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #50e3c2;
+            --background-color: #f8f9fa;
+            --text-color: #2c3e50;
+            --border-color: #e1e4e8;
+            --hover-color: #edf2f7;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: var(--text-color);
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 1.5em;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .upload-container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            margin-bottom: 30px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .upload-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px var(--shadow-color);
+        }
+
+        .file-input {
+            margin-bottom: 25px;
+        }
+
+        .file-input label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 1.1em;
+        }
+
+        .file-input small {
+            color: #718096;
+            display: block;
+            margin-top: 8px;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            background: var(--background-color);
+            transition: border-color 0.2s ease;
+        }
+
+        input[type="file"]:hover {
+            border-color: var(--primary-color);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            width: 100%;
+            max-width: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+        }
+
+        #result {
+            margin-top: 30px;
+            padding: 25px;
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .table-container {
+            margin: 25px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            background: white;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 0.95em;
+        }
+
+        th, td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            color: var(--text-color);
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: var(--hover-color);
+        }
+
+        .download-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .download-btn:hover {
+            background: #357abd;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+        }
+
+        h3, h4 {
+            color: var(--text-color);
+            margin: 1.5em 0 1em;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0.8em 0;
+            color: #4a5568;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--background-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e0;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a0aec0;
+        }
+    </style>
+</head>
+<body>
+    <h1>匹配文件上传</h1>
+    
+    <div class="upload-container">
+        <form id="uploadForm" enctype="multipart/form-data">
+            <div class="file-input">
+                <label for="txtFile1">选择需要匹配的TXT文件:</label>
+                <input type="file" id="txtFile1" name="txtFile1" accept=".txt" required>
+                <p><small>文件格式例如: ["Dry cleaning/laundry service", "Shopping on site", "Free WiFi"]</small></p>
+            </div>
+            
+            <div class="file-input">
+                <label for="txtFile2">选择行业标准文件:</label>
+                <input type="file" id="txtFile2" name="txtFile2" accept=".txt" required>
+            </div>
+            
+            <button type="submit" class="submit-btn">上传文件</button>
+        </form>
+    </div>
+    
+    <div id="result"></div>
+    
+    <script>
+        // 存储最新的数据
+        let currentMatchesData = null;
+
+        // 下载CSV函数
+        function downloadCSV() {
+            if (!currentMatchesData || !Array.isArray(currentMatchesData)) {
+                console.error('没有可用的数据');
+                return;
+            }
+
+            const headers = ['供应商名称', 'OTA代码', 'OTA名称'];
+            const rows = currentMatchesData.map(item => [
+                item.suppiler_name || '',
+                item.ota_code || '',
+                item.ota_name || ''
+            ]);
+            
+            const csvContent = [
+                headers.join(','),
+                ...rows.map(row => row.map(cell => `"${cell}"`).join(','))
+            ].join('\n');
+            
+            const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `bedrock_results_${new Date().toISOString().slice(0,10)}.csv`;
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // 处理表单提交
+        document.getElementById('uploadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData();
+            const file1 = document.getElementById('txtFile1').files[0];
+            const file2 = document.getElementById('txtFile2').files[0];
+            
+            if (!file1 || !file2) {
+                alert('请选择两个TXT文件');
+                return;
+            }
+            
+            formData.append('txtFile1', file1);
+            formData.append('txtFile2', file2);
+            
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = '<p>处理中，请稍候...</p>';
+            
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应不正常');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('接收到的数据:', data);
+                currentMatchesData = data.matches;
+                
+                resultDiv.innerHTML = `
+                    <h3>处理结果</h3>
+                    <p>状态: ${data.status}</p>
+                    <p>消息: ${data.message}</p>
+                    <p>处理项数: ${data.count}</p>
+                    ${Array.isArray(data.matches) ? `
+                        <h4>模型匹配结果:</h4>
+                        <button class="download-btn" id="downloadBtn">下载CSV</button>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>供应商名称</th>
+                                        <th>OTA代码</th>
+                                        <th>OTA名称</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${(() => {
+                                        // 创建一个Map来记录每个供应商名称出现的次数
+                                        const supplierCount = new Map();
+                                        data.matches.forEach(item => {
+                                            const name = item.suppiler_name || '';
+                                            supplierCount.set(name, (supplierCount.get(name) || 0) + 1);
+                                        });
+                                        
+                                        return data.matches.map(item => {
+                                            const name = item.suppiler_name || '';
+                                            const isDuplicate = supplierCount.get(name) > 1;
+                                            return `
+                                                <tr>
+                                                    <td style="${isDuplicate ? 'background-color: #FFC0CB;' : ''}">${name}</td>
+                                                    <td>${item.ota_code || ''}</td>
+                                                    <td>${item.ota_name || ''}</td>
+                                                </tr>
+                                            `;
+                                        }).join('');
+                                    })()}
+                                </tbody>
+                            </table>
+                        </div>
+                    ` : ''}
+                `;
+
+                // 添加下载按钮事件监听器
+                const downloadBtn = document.getElementById('downloadBtn');
+                if (downloadBtn) {
+                    downloadBtn.addEventListener('click', downloadCSV);
+                }
+            })
+            .catch(error => {
+                console.error('上传出错:', error);
+                resultDiv.innerHTML = `<p style="color: red;">上传失败: ${error.message}</p>`;
+            });
+        });
+    </script>
+</body>
+</html>

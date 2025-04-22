@@ -1,0 +1,417 @@
+
+1	24-hour front desk
+2	24-hour room service
+3	24-hour security
+4	Adjoining rooms
+5	Air conditioning
+6	Airline desk
+7	ATM/Cash machine
+8	Baby sitting
+9	BBQ/Picnic area
+10	Bilingual staff
+11	Bookstore
+12	Boutiques/stores
+13	Brailed elevators
+14	Business library
+15	Car rental desk
+16	Casino
+17	Check cashing policy
+18	Check-in kiosk
+19	Cocktail lounge
+20	Coffee shop
+21	Coin operated laundry
+22	Concierge desk
+23	Concierge floor
+24	Conference facilities
+25	Courtyard
+26	Currency exchange
+27	Desk with electrical outlet
+28	Doctor on call
+29	Door man
+30	Driving range
+31	Drugstore/pharmacy
+32	Duty free shop
+33	Elevators
+34	Executive floor
+35	Exercise gym
+36	Express check-in
+37	Express check-out
+38	Family plan
+39	Florist
+40	Folios
+41	Free airport shuttle
+42	Free parking
+43	Free transportation
+44	Game room
+45	Gift/News stand
+46	Hairdresser/barber
+47	Accessible facilities
+48	Health club
+49	Heated pool
+50	Housekeeping - daily
+51	Housekeeping - weekly
+52	Ice machine
+53	Indoor parking
+54	Indoor pool
+55	Jacuzzi
+56	Jogging track
+57	Kennels
+58	Laundry/Valet service
+59	Liquor store
+60	Live entertainment
+61	Massage services
+62	Nightclub
+63	Off-Site parking
+64	On-Site parking
+65	Outdoor parking
+66	Outdoor pool
+67	Package/Parcel services
+68	Parking
+69	Photocopy center
+70	Playground
+71	Pool
+72	Poolside snack bar
+73	Public address system
+74	Ramp access
+75	Recreational vehicle parking
+76	Restaurant
+77	Room service
+78	Safe deposit box
+79	Sauna
+80	Security
+81	Shoe shine stand
+82	Shopping mall
+83	Solarium
+84	Spa
+85	Sports bar
+86	Steam bath
+87	Storage space
+88	Sundry/Convenience store
+89	Technical concierge
+90	Theatre desk
+91	Tour/sightseeing desk
+92	Translation services
+93	Travel agency
+94	Truck parking
+95	Valet cleaning
+96	Dry cleaning
+97	Valet parking
+98	Vending machines
+99	Video tapes
+100	Wakeup service
+101	Wheelchair access
+102	Whirlpool
+103	Multilingual staff
+104	Wedding services
+105	Banquet facilities
+106	Bell staff/porter
+107	Beauty shop/salon
+108	Complimentary self service laundry
+109	Direct dial telephone
+110	Female traveler room/floor
+111	Pharmacy
+112	Stables
+113	120 AC
+114	120 DC
+115	220 AC
+116	Accessible parking
+117	220 DC
+118	Barbeque grills
+119	Women's clothing
+120	Men's clothing
+121	Children's clothing
+122	Shops and commercial services
+123	Video games
+124	Sports bar open for lunch
+125	Sports bar open for dinner
+126	Room service - full menu
+127	Room service - limited menu
+128	Room service - limited hours
+129	Valet same day dry cleaning
+130	Body scrub
+131	Body wrap
+132	Public area air conditioned
+133	Efolio available to company
+134	Individual Efolio available
+135	Video review billing
+136	Butler service
+137	Complimentary in-room coffee or tea
+138	Complimentary buffet breakfast
+139	Complimentary cocktails
+140	Complimentary coffee in lobby
+141	Complimentary continental breakfast
+142	Complimentary full american breakfast
+143	Dinner delivery service from local restaurant
+144	Complimentary newspaper delivered to room
+145	Complimentary newspaper in lobby
+146	Complimentary shoeshine
+147	Evening reception
+148	Front desk
+149	Grocery shopping service available
+150	Halal food available
+151	Kosher food available
+152	Limousine service
+153	Managers reception
+154	Medical Facilities Service
+155	Telephone jack adaptor available
+156	All-inclusive meal plan
+157	Buffet breakfast
+158	Communal bar area
+159	Continental breakfast
+160	Full meal plan
+161	Full american breakfast
+162	Meal plan available
+163	Modified american meal plan
+164	Food and beverage outlets
+165	Lounges/bars
+166	Barber shop
+167	Video checkout
+168	Onsite laundry
+169	24-hour food & beverage kiosk
+170	Concierge lounge
+171	Parking fee managed by hotel
+172	Transportation
+173	Breakfast served in restaurant
+174	Lunch served in restaurant
+175	Dinner served in restaurant
+176	Full service housekeeping
+177	Limited service housekeeping
+178	High speed internet access for laptop in public areas
+179	Wireless internet connection in public areas
+180	Additional services/amenities/facilities on property
+181	Transportation services - local area
+182	Transportation services - local office
+183	DVD/video rental
+184	Parking lot
+185	Parking deck
+186	Street side parking
+187	Cocktail lounge with entertainment
+188	Cocktail lounge with light fare
+189	Motorcycle parking
+190	Phone services
+191	Ballroom
+192	Bus parking
+193	Children's play area
+194	Children's nursery
+195	Disco
+196	Early check-in
+197	Locker room
+198	Non-smoking rooms (generic)
+199	Train access
+200	Aerobics instruction
+201	Baggage hold
+202	Bicycle rentals
+203	Dietician
+204	Late check-out available
+205	Pet-sitting services
+206	Prayer mats
+207	Sports trainer
+208	Turndown service
+209	DVDs/videos - children
+210	Bank
+211	Lobby coffee service
+212	Banking services
+213	Stairwells
+214	Pet amenities available
+215	Exhibition/convention floor
+216	Long term parking
+217	Children not allowed
+218	Children welcome
+219	Courtesy car
+220	Hotel does not provide pornographic films/TV
+221	Hotspots
+222	Free high speed internet connection
+223	Internet services
+224	Pets allowed
+225	Gourmet highlights
+226	Catering services
+227	Complimentary breakfast
+228	Business center
+229	Business services
+230	Secured parking
+231	Racquetball
+232	Snow sports
+233	Tennis court
+234	Water sports
+235	Child programs
+236	Golf
+237	Horseback riding
+238	Oceanfront
+239	Beachfront
+240	Hair dryer
+241	Ironing board
+242	Heated guest rooms
+243	Toilet
+244	Parlor
+245	Video game player
+246	Thalassotherapy
+247	Private dining for groups
+248	Hearing impaired services
+249	Carryout breakfast
+250	Deluxe continental breakfast
+251	Hot continental breakfast
+252	Hot breakfast
+253	Private pool
+254	Connecting rooms
+255	Data port
+256	Exterior corridors
+257	Gulf view
+258	Accessible rooms
+259	High speed internet access
+260	Interior corridors
+261	High speed wireless
+262	Kitchenette
+263	Private bath or shower
+264	Fire safety compliant
+265	Welcome drink
+266	Boarding pass print-out available
+267	Printing services available
+268	All public areas non-smoking
+269	Meeting rooms
+270	Movies in room
+271	Secretarial service
+272	Snow skiing
+273	Water skiing
+274	Fax service
+275	Great room
+276	Lobby
+277	Multiple phone lines billed separately
+278	Umbrellas
+279	Gas station
+280	Grocery store
+281	24-hour coffee shop
+282	Airport shuttle service
+283	Luggage service
+284	Piano Bar
+285	VIP security
+286	Complimentary wireless internet
+287	Concierge breakfast
+288	Same gender floor
+289	Children programs
+290	Building meets local, state and country building codes
+291	Internet browser On TV
+292	Newspaper
+293	Parking - controlled access gates to enter parking area
+294	Hotel safe deposit box (not room safe box)
+295	Storage space available – fee
+296	Type of entrances to guest rooms
+297	Beverage/cocktail
+298	Cell phone rental
+299	Coffee/tea
+300	Early check in guarantee
+301	Food and beverage discount
+302	Late check out guarantee
+303	Room upgrade confirmed
+304	Room upgrade on availability
+305	Shuttle to local businesses
+306	Shuttle to local attractions
+307	Social hour
+308	Video billing
+309	Welcome gift
+310	Hypoallergenic rooms
+311	Room air filtration
+312	Smoke-free property
+313	Water purification system in use
+314	Poolside service
+315	Clothing store
+316	Electric car charging stations
+317	Office rental
+318	Piano
+319	Incoming fax
+320	Outgoing fax
+321	Semi-private space
+322	Loading dock
+323	Baby kit
+324	Children's breakfast
+325	Cloakroom service
+326	Coffee lounge
+327	Events ticket service
+328	Late check-in
+329	Limited parking
+330	Outdoor summer bar/café
+331	No parking available
+332	Beer garden
+333	Garden lounge bar
+334	Summer terrace
+335	Winter terrace
+336	Roof terrace
+337	Beach bar
+338	Helicopter service
+339	Ferry
+340	Tapas bar
+341	Café bar
+342	Snack bar
+343	Guestroom wired internet
+344	Guestroom wireless internet
+345	Fitness center
+346	Alcoholic beverages
+347	Non-alcoholic beverages
+348	Health and beauty services
+349	Mobile/Digital Check-in
+350	Mobile/Digital Check-out
+351	Choose a room
+352	Enhanced Hygiene/Cleanliness Protocols
+353	Cleanliness Certification
+354	Contactless payment available during check in/out
+355	Wrapped disposable or metal straws
+356	Individually sealed disposable utensils available
+357	Individually package food options
+358	Additional cleaning services
+359	Contactless in-room dining
+360	Hotel staff allowed to enter a hotel room once a guest has checked in
+361	Staff's access to guest rooms subject to the guest's authorization
+362	Buffets or plated meals served only by employees/attendants
+363	Pre-packaged breakfast items
+364	Non-touch operations available in public bathrooms
+365	Measures are in place to avoid guests handling food at buffets
+366	Self-service food utensils replaced frequently
+367	Luggage stored per group of guests
+368	Non-shareable food and beverage menus provided
+369	Housekeeping by request
+370	Controlled occupancy in elevators/lifts
+371	Property air purification system
+372	Allergy friendly rooms
+373	Medical grade air purification system
+374	Testing and tracing policies
+375	AHLA Safe Stay compliant
+376	Covered parking
+377	Uncovered parking
+378	Light breakfast
+379	Complimentary light breakfast
+380	Streaming services provided
+381	Prayer room
+382	Private beach
+383	Mobile network coverage
+384	Smoking area
+385	Café
+386	Walking tour
+387	Stroller rental
+388	Vegetable/spice garden
+389	Board games
+390	LED lighting makes up for at least 80% of the property’s guest and public room lighting
+391	Property's electricity is 100% renewable
+392	Property has a food waste program
+393	At least 80% of food is sourced from property’s local region (e.g. within 50km from property location)
+394	Single-use plastic water bottles are not offered
+395	The property has installed water refill stations and encourages guests to use these instead of single-use plastic water bottles
+396	Single-use plastic soda bottles are not offered
+397	The property has reusable tableware (replacing single-use)
+398	The property has reusable cups (replacing single-use)
+399	Single-use plastic straws are not offered
+400	Single-use plastic stirrers are not offered
+401	Property has a recycling plan in place (e.g. in guest rooms, common areas, kitchen) for at least four waste types (glass, paper, plastic, organic)
+402	Property only uses water-efficient toilets (e.g. low-flow toilets, dual flush toilets)
+403	Property only uses water-efficient showers (e.g. smart showers, low flow shower heads)
+404	Wild (non-domesticated) animals are not displayed/interacted with while captive on the property or harvested, consumed, or sold
+405	The property compensates for at least 10% of total annual carbon emissions by purchasing certified carbon offsets
+406	80% of the food products offered by the property is organic
+407	Green spaces such as gardens/rooftop gardens on the property
+408	Property offers bicycle parking
+409	Local artists are offered a platform to display their talents
+410	Property invests 10% of it’s revenue back into the community or in local sustainability projects
+411	Property provides guests with information regarding local ecosystems, heritage and culture, as well as visitor etiquette
+412	Guests are offered tours and activities organised by local guides and businesses
+413	Television in common area
+414	Pet walking/exercise area
+415	Pet grooming services
+416	Electric bicycle charging station

@@ -1,0 +1,10 @@
+1	24-hour front desk
+2	24-hour room service
+3	24-hour security
+4	Adjoining rooms
+5	Air conditioning
+6	Free WiFi
+7	Concierge service
+8	Luggage storage
+9	Shopping on site
+10	Dry cleaning/laundry service
