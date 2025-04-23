@@ -133,16 +133,14 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 			standardMap[content] = id
 		}
 	}
+	// TODO 先进行字符完全匹配，然后再将无法完全匹配的内容调用模型
 
+	// 调用模型进行匹配
 	bedrockResult, err := internal.MappingResultWithClaude(context.Background(), standardMap, result)
 	if err != nil {
 		http.Error(w, "调用模型失败: "+err.Error(), http.StatusBadRequest)
 		return
 	}
-
-	// 添加调试日志
-	fmt.Printf("BedrockResult类型: %T\n", bedrockResult)
-	fmt.Printf("BedrockResult内容: %+v\n", bedrockResult)
 
 	// 10. 匹配结果
 	//matches := make(map[string]string)
@@ -170,6 +168,5 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 		"count":   len(result),
 		"matches": bedrockResult,
 	}
-	fmt.Printf("发送到客户端的响应: %+v\n", response)
 	json.NewEncoder(w).Encode(response)
 }

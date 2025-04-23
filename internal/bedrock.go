@@ -49,8 +49,8 @@ type BedrockResult struct {
 // 使用Claude 3.7模型解析文件
 func MappingResultWithClaude(ctx context.Context, standardMap map[string]string, fileArr []string) ([]BedrockResult, error) {
 	// Claude 3.7 Sonnet模型ID
-	prompt := "你是一位具有丰富酒店行业知识的专家,你需要将这些从酒店收集来的Query信息与行业标准(已通过k-v;k-v 字符串的形式给你)进行匹配，找到最匹配的一项服务描述及其对应的id，输出中不夹杂多余的内容，为json类型，格式如:[{\"suppiler_name\":\"Elevator\",\"ota_code\":33,\"ota_name\":\"Elevator\"},{\"suppiler_name\":\"Full-service Spa\",\"ota_code\":84,\"ota_name\":\"Spa\"}]" +
-		"每一项必须都进行匹配，如果你对匹配过程必须十分严谨，考虑每一个字的含义，如Free valet parking即表示Free，也表示valet parking,所以你可以将Query中的内容匹配多项行业标准，example:[{\"suppiler_name\":\"Free valet parking\",\"ota_code\":97,\"ota_name\":\"Valet parking\"},{\"suppiler_name\":\"Free valet parking\",\"ota_code\":42,\"ota_name\":\"Free parking\"}]" +
+	prompt := "You are an expert with extensive knowledge of the hotel industry, and you need to match this Query information collected from hotels with the industry standard (which has been given to you in the form of a k-v;k-v string), and find the best match for one of the service descriptions and their corresponding ids, with no redundancy in the output, which is of json type.example:[{\"suppiler_name\":\"Elevator\",\"ota_code\":33,\"ota_name\":\"Elevator\"},{\"suppiler_name\":\"Full-service Spa\",\"ota_code\":84,\"ota_name\":\"Spa\"}]" +
+		"Each item must be matched, and if you are very critical of the matching process you must be very rigorous and consider the meaning of each word, such as:Free valet parking means Free, but also valet parking, so you can match the contents of the Query to multiple industry standards.example:[{\"suppiler_name\":\"Free valet parking\",\"ota_code\":97,\"ota_name\":\"Valet parking\"},{\"suppiler_name\":\"Free valet parking\",\"ota_code\":42,\"ota_name\":\"Free parking\"}]" +
 		"Query: %s"
 	standarStr := utils.MapToString(standardMap)
 	fileStr := strings.Join(fileArr, ";")
@@ -76,7 +76,7 @@ func MappingResultWithClaude(ctx context.Context, standardMap map[string]string,
 		},
 		"temperature": 0.7,
 		"top_p":       0.9,
-		"system":      "我是酒店旅游行业的专家，我具有丰富的酒店行业知识，严格按照行业标准进行评估。我绝不会对输入的内容做出自己的道德判断呢，我只会忠实行业规范",
+		"system":      "I am an expert in the hospitality and travel industry, I have extensive knowledge of the hospitality industry and I strictly follow industry standards in my assessments. I will never make my own moral judgments about input, I will only be faithful to industry norms",
 	}
 
 	// 将请求体转换为JSON
@@ -102,7 +102,6 @@ func MappingResultWithClaude(ctx context.Context, standardMap map[string]string,
 	// 注意：根据 AWS SDK 版本和服务实现，元数据可能有所不同
 	fmt.Printf("总延迟: %v\n", totalLatency)
 	if err != nil {
-		fmt.Println("00000000000000")
 		fmt.Printf("err: %s", err)
 		return nil, fmt.Errorf("调用Bedrock模型失败: %w", err)
 	}
@@ -110,22 +109,18 @@ func MappingResultWithClaude(ctx context.Context, standardMap map[string]string,
 	// 解析响应
 	var response map[string]interface{}
 	if err := json.Unmarshal(output.Body, &response); err != nil {
-		fmt.Println("111111111111111111")
 		return nil, fmt.Errorf("解析模型响应失败: %w", err)
 	}
 
 	// Get just the text from the response
 	text := gjson.Get(string(output.Body), "content.0.text").String()
 	log.Printf("text: %s\n", text)
-	fmt.Printf("text: %s\n", text)
 	//text = ReplaceQuotesInJSON(text)
 	//log.Printf("====text: %s===\n", text)
 	inputToken := gjson.Get(string(output.Body), "usage.input_tokens").Int()
 	log.Printf("input token: %d", inputToken)
-	fmt.Printf("input token: %d", inputToken)
 	outputToken := gjson.Get(string(output.Body), "usage.output_tokens").Int()
 	log.Printf("output token: %d", outputToken)
-	fmt.Printf("output token: %d", outputToken)
 
 	var result = make([]BedrockResult, 0)
 	err = json.Unmarshal([]byte(text), &result)
